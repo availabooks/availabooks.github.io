@@ -47,6 +47,13 @@ nav img{
 .nav-links ul li:hover::after{
     width: 100%;
 }
+
+.active, .search-and-menu ul li:hover
+{
+    background: #CDDBDD;
+    border-radius: 3px;
+}
+
 .text-box{
     width: 90%;
     color: white;
