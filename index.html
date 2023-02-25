@@ -1,421 +1,105 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Outfit', sans-serif;
-}
-.header{
-    min-height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(background.jpg);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-}
-nav{
-    display: flex;
-    padding: 2% 6%;
-    justify-content: space-between;
-    align-items: center;
-}
-nav img{
-    width: 80px;
-}
-.nav-links{
-    flex: 1;
-    text-align: left;
-}
-.nav-links ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-}
-.nav-links ul li a{
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-.nav-links ul li::after{
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: #0080ff;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-.nav-links ul li:hover::after{
-    width: 100%;
-}
-.box{
-    height: 30px;
-    display: flex;
-    cursor: pointer;
-    padding: 10px 20px;
-    background: white;
-    border-radius: 30px;
-    align-items: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>availaBOOKS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<section class="header">
+    <nav>
+        <a href="index.html"><img src="logo.png"></a>
+        <div class="nav-links">
+           <ul>
+               <li><a href="index.html">availaBOOKS</a></li>
+               <li><a href="allbooks.html">All Books</a></li>
+           </ul>
+         </div>
+         <div class="box">
+             <input type="text" placeholder="Search...">
+             <a href="#">
+                 <i class="fa fa-search"></i>
+             </a>
+         </div>
+         <div class="dropdown" style="float:right;">
+             <button onclick="myFunction()" class="dropbtn">
+                 <i class="fa fa-bars"></i>
+             </button>
+             <div id="myDropdown" class="dropdown-content" style="right:0;">
+                 <a href="#">Profile</a>
+                 <hr>
+                 <a href="#">Log Out</a>
+             </div>
+         </div>
+         
+     </nav>
 
-.box:hover input{
-    width: 130px;
-}
+<div class="text-box">
+    <h1>AVAILABOOKS</h1>
+    <p>AVAILABOOKS is a book monitoring system website which monitors the availability of the books in LCCL library.</p>
+</div> 
 
-.box input{
-    width: 0;
-    outline: none;
-    border: none;
-    font-weight: 500;
-    transition: 0.5s;
-    background: transparent;
-}
+</section>
 
-.box a .fas{
-    color: aquamarine;
-    font-size: 18px;
-}
+<!------ Recommendations ------>
 
-.dropbtn{
-    cursor: pointer;
-    font-size: 16px;
-    border: none;
-    padding: 16px;
-    color: white;
-    padding: 14px 16px;
-    background-color: transparent;
-}
-
-.dropdown:hover .dropbtn:focus{
-    background-color: transparent;
-}
-
-.dropdown{
-    position: relative;
-    display: inline-block;
-}
-.dropdown-content{
-    display: none;
-    position: absolute;
-    margin-top: 10px;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    border-radius: 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    transition: 0.5s;
-}
-.dropdown-content a{
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-weight: 600;
-}
-.dropdown-content a:hover{
-    background-color: white;
-    color: gray;
-    border-radius: 10px;
-}
-.dropdown a:hover .dropdown-content{
-    display: block;
-}
-
-.show{
-    display: block;
-}
-
-.text-box{
-    width: 90%;
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-}
-.text-box h1{
-    font-size: 40px;
-}
-.text-box p{
-    margin: 10px;
-    font-size: 15px;
-    color: white;
-}
-
-@media(max-width: 700px){
-    nav img{
-        width: 50px;
-    }
-    .text-box h1{
-        font-size: 18px;
-    }
-    .text-box p{
-        margin: 10px;
-        font-size: 12px;
-        color: white;
-    }
-    .nav-links ul li{
-        list-style: none;
-        display: inline-block;
-        padding: 2px 6px;
-        position: relative;
-    }
-    .nav-links ul li a{
-        color: white;
-        text-decoration: none;
-        font-size: 12px;
-    }
-}
-
-/*----- Recommendations -----*/
-
-.recommendations{
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    padding-top: 100px;
-    background: #EBF3FF;
-}
-h1{
-    font-size: 36px;
-    font-weight: 600;
-}
-
-p{
-    color: dimgray;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 22px;
-    padding: 10px;
-}
-
-@media(max-width: 700px){
-    h1{
-        font-size: 20px;
-        font-weight: 600;
-    }
-    p{
-        color: dimgray;
-        font-size: 12px;
-        font-weight: 300;
-        line-height: 22px;
-        padding: 10px;
-    }
-}
-
-/*----- All Category -----*/
-
-.all-category{
-    width: 100%;
-    margin: auto;
-    padding-top: 80px;
-    padding-bottom: 50px;
-    background: #EBF3FF;
-}
-
-.category-science-books-text{
-    flex-basis: 48%;
-    padding: 30px 2px;
-}
-.category-science-books-text h1{
-    margin-left: 130px;
-    padding-top: 0;
-    font-size: 30px;
-}
-.category-science-books-text p{
-    margin-left: 100px;
-    padding: 15px 0 25px;
-    font-size: 17px;
-}
-
-.view-more-btn{
-    display: inline-block;
-    text-decoration: none;
-    color: #2B2B2B;
-    border: 1px solid #2B2B2B;
-    padding: 12px 34px;
-    background: transparent;
-    cursor: pointer;
-    margin-left: 165px;
-}
-
-.view-more-btn:hover{
-    border: 1px solid #0080ff;
-    transition: 0.5s;
-}
-
-.category-english-books-text{
-    text-align: right;
-    flex-basis: 48%;
-    padding: 30px 2px;
-}
-.category-english-books-text h1{
-    margin-right: 120px;
-    padding-top: 0;
-    font-size: 30px;
-}
-.category-english-books-text p{
-    margin-right: 90px;
-    padding: 15px 0 25px;
-    font-size: 17px;
-}
-
-.view-more-btn-2{
-    display: inline-block;
-    text-decoration: none;
-    color: #2B2B2B;
-    border: 1px solid #2B2B2B;
-    padding: 12px 34px;
-    background: transparent;
-    cursor: pointer;
-    margin-right: 165px;
-}
-
-.view-more-btn-2:hover{
-    border: 1px solid #0080ff;
-    transition: 0.5s;
-}
-
-.category-math-books-text{
-    flex-basis: 48%;
-    padding: 30px 2px;
-}
-.category-math-books-text h1{
-    margin-left: 143px;
-    padding-top: 0;
-    font-size: 30px;
-}
-.category-math-books-text p{
-    margin-left: 100px;
-    padding: 15px 0 25px;
-    font-size: 17px;
-}
-
-.view-more-btn-3{
-    display: inline-block;
-    text-decoration: none;
-    color: #2B2B2B;
-    border: 1px solid #2B2B2B;
-    padding: 12px 34px;
-    background: transparent;
-    cursor: pointer;
-    margin-left: 165px;
-}
-
-.view-more-btn-3:hover{
-    border: 1px solid #0080ff;
-    transition: 0.5s;
-}
-
-@media(max-width: 700px){
-    .category-science-books-text{
-        text-align: center;
-        flex-basis: 48%;
-    }
-    .category-science-books-text h1{
-        margin: auto;
-        padding-top: 0;
-        font-size: 16px;
-    }
-    .category-science-books-text p{
-        margin: auto;
-        padding: 15px 0 25px;
-        font-size: 12px; 
-    }
-    .view-more-btn{
-        margin: auto;
-        display: inline-block;
-        text-decoration: none;
-        color: #2B2B2B;
-        border: 1px solid #2B2B2B;
-        background: transparent;
-        cursor: pointer;
-        font-size: 12px;
-    }
-    .category-english-books-text{
-        text-align: center;
-        flex-basis: 48%;
-    }
-    .category-english-books-text h1{
-        margin: auto;
-        padding-top: 0;
-        font-size: 16px;
-    }
-    .category-english-books-text p{
-        margin: auto;
-        padding: 15px 0 25px;
-        font-size: 12px; 
-    }
+<section class="recommendations">
+    <h1>RECOMMENDATIONS</h1>
+    <p>Recommended books for STEM students.</p>
     
-    .view-more-btn-2{
-        margin: auto;
-        display: inline-block;
-        text-decoration: none;
-        color: #2B2B2B;
-        border: 1px solid #2B2B2B;
-        background: transparent;
-        cursor: pointer;
-        font-size: 12px;
-    }
-    .category-math-books-text{
-        text-align: center;
-        flex-basis: 48%;
-    }
-    .category-math-books-text h1{
-        margin: auto;
-        padding-top: 0;
-        font-size: 16px;
-    }
-    .category-math-books-text p{
-        margin: auto;
-        padding: 15px 0 25px;
-        font-size: 12px;
-    }
     
-    .view-more-btn-3{
-        display: inline-block;
-        text-decoration: none;
-        color: #2B2B2B;
-        border: 1px solid #2B2B2B;
-        padding: 12px 34px;
-        background: transparent;
-        cursor: pointer;
-        margin: auto;
-        font-size: 12px;
+</section>
+      
+<!--------- all category --------->
+      
+<section class="all-category">
+    
+    <div class="row">
+        <div class="category-science-books-text">
+            <h1>SCIENCE BOOKS</h1>
+            <p>Contains all science books in the library.</p>
+            <a href="" class="view-more-btn">View more</a>
+        </div>
+    </div>
+    <div class="row-2">
+        <div class="category-english-books-text">
+            <h1>ENGLISH BOOKS</h1>
+            <p>Contains all english books in the library.</p>
+            <a href="" class="view-more-btn-2">View more</a>
+        </div>
+    </div>
+    <div class="row-3">
+        <div class="category-math-books-text">
+            <h1>MATH BOOKS</h1>
+            <p>Contains all math books in the library.</p>
+            <a href="" class="view-more-btn-3">View more</a>
+        </div>
+    </div>
+</section>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
     }
+  }
 }
-
-/*----------- all books page -----------*/
-
-.sub-header{
-    height: 50vh;
-    width: 100%;
-    background: #EBF3FF;
-}
-.nav-links-b{
-    flex: 1;
-    text-align: left;
-}
-.nav-links-b ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-}
-.nav-links-b ul li a{
-    color: #333333;
-    text-decoration: none;
-    font-size: 18px;
-}
-.nav-links-b ul li::after{
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: #0080ff;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-.nav-links-b ul li:hover::after{
-    width: 100%;
+</script>
+</body>
+</html>
